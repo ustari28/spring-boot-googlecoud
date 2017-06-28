@@ -11,7 +11,7 @@ import java.lang.annotation.Target;
  */
 @Retention(RetentionPolicy.RUNTIME)
 @Target(ElementType.FIELD)
-public @interface StringInfoParser {
+public @interface StringInfoParse {
 
     /**
      * Position where starts the value.
@@ -33,6 +33,14 @@ public @interface StringInfoParser {
      * @return Order.
      */
     int order() default 0;
+
+    /**
+     * Property which gave in case that you want to parse a array. The start and width will be taken from properties
+     * defined previously.
+     *
+     * @return size.
+     */
+    int size() default 0;
 
     /**
      * Format which will be applied to field.

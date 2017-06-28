@@ -1,6 +1,6 @@
 package com.alan.springbootgooglecloud.dto;
 
-import com.alan.springbootgooglecloud.annotation.StringInfoParser;
+import com.alan.springbootgooglecloud.annotation.StringInfoParse;
 import lombok.Data;
 
 /**
@@ -9,11 +9,16 @@ import lombok.Data;
  */
 @Data
 public class ClientDTO {
-    @StringInfoParser(start = 0, width = 3)
+    @StringInfoParse(start = 0, width = 3)
     private String id;
-    @StringInfoParser(start = 3, width = 4)
+    @StringInfoParse(start = 3, width = 4)
     private String name;
-    @StringInfoParser(start = 7, width = 2)
+    @StringInfoParse(start = 7, width = 2)
     private Integer cantidad;
+    @StringInfoParse(start = 9, width = 11)
     private PaidDTO paidDTO;
+    @StringInfoParse(start = 20, width = 10, size = 2)
+    private String[] strings;
+    @StringInfoParse(start = 30, width = 36, size = 6)
+    private PaidDTO[] paidArray;
 }
